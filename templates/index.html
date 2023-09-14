@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Board</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/jobs">Job Listings</a></li>
+        <li><a href="/employer">Employer Dashboard</a></li>
+        {% if 'employer_id' in session %}
+        <li><a href="/logout">Logout</a></li> 
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to the Job Board</h1>
+        <p>Find your dream job or hire talented professionals.</p>
+        <a href="/jobs" class="btn">Browse Jobs</a>
+        <a href="/create_job" class="btn">Create job</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h2>Job Listings</h2>
+        <p>Explore a wide range of job opportunities.</p>
+      </div>
+      <div class="feature">
+        <h2>Employer Dashboard</h2>
+        <p>Manage job listings and applicants.</p>
+        <p>Looking for talented individuals to hire? <a href="/register_employer">Click here</a>.</p>
+      </div>
+      <div class="feature">
+        <h2>User Authentication</h2>
+        <p>Create an account and login to access additional features.</p>
+      </div>
+    </section>
+  </main>
+
+  <div>
+    <p>Are you a registered employer? <a href="/login_employer">Log in here</a>.</p> <!-- Added lines -->
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Job Board. All rights reserved.</p>
+  </footer>
+
+  <script src="static/script.js"></script>
+</body>
+
+</html>

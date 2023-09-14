@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Applications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e6f7ff;
+        }
+
+        .resume-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .resume-link {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .resume-link:hover {
+            background-color: #45a049;
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 12px;
+            background-color: #008CBA;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-link:hover {
+            background-color: #007A99;
+        }
+    </style>
+</head>
+<body>
+    <h1>Job Applications</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Resume</th>
+            <th>phone number</th>
+            <th>Cover letter</th>
+        </tr>
+        {% for application in applications %}
+        <tr>
+            <td>{{ application.name }}</td>
+            <td>{{ application.email }}</td>
+            <td class="resume-links">
+                <div>
+                    <a class="resume-link" href="{{ application.resume }}">Open</a>
+                    <a class="download-link" href="{{ application.resume }}" download>Download</a>
+                </div>
+                <div>{{ application.resume }}</div>
+            </td>
+            <td>{{ application.phone }}</td>
+            <td>{{ application.cover_letter }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

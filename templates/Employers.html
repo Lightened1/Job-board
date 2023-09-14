@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employer Dashboard</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/jobs">Job Listings</a></li>
+        <li><a href="/employer">Employer Dashboard</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        {% if 'employer_id' in session %}
+        <li><a href="/logout">Logout</a></li> 
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="dashboard-links">
+        <h1>Welcome, {{ employer_name }}</h1>
+    
+        <ul>
+          <li><a href="/create_job">Create a Job</a></li>
+          <li><a href="/dashboard">Posted Jobs</a></li>
+          <li><a href="/applications">Applications</a></li>
+        </ul>
+      </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Job Board. All rights reserved.</p>
+  </footer>
+
+  <script src="static/script.js"></script>
+</body>
+
+</html>

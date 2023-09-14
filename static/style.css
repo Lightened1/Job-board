@@ -1,0 +1,111 @@
+/* Style the hero section */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color: #314455;
+  font-size: 36px;
+  margin: 0;
+}
+
+.hero p {
+  color: #666666;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #314455;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1f2a38;
+}
+
+/* Style the features section */
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.feature {
+  width: 33.33%;
+  padding: 20px;
+}
+
+.feature h2 {
+  color: #314455;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.feature p {
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+/* Style the footer */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: #314455;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  display: flex; /* Display the navigation items in a row */
+  justify-content: center; /* Center the navigation items horizontally */
+  align-items: center; /* Align the navigation items vertically */
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0 10px;
+}
+
+a {
+  color: #314455;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job List</title>
+    <link rel="stylesheet" href="static/jobs.css">
+</head>
+<body>
+    <form action="/jobs" method="GET" class="search-form">
+        <input type="text" name="query" placeholder="Search by employer or job" class="search-input">
+        <button type="submit" class="search-button">Search</button>
+    </form>
+
+    <!-- Display search results -->
+    <div class="job-grid">
+        {% if query %}
+        <h2>Search Results:</h2>
+        {% for job in jobs %}
+        {% if query.lower() in job.title.lower() or query.lower() in job.employer.username.lower() %}
+        <div class="job-item">
+            <div class="job-info">
+                <div class="job-photo">
+                    <img src="{{ job.photo_url }}" alt="Job Photo">
+                </div>
+                <div class="job-details">
+                    <h2>{{ job.title }}</h2>
+                    <p>{{ job.description }}</p>
+                    <p>Employer: {{ job.employer.username }}</p>
+                    <!-- Redirect to apply.html when the Apply button is clicked -->
+                    <a href="/apply?job_id={{ job.id }}" class="apply-button">Apply</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+        <h2>All Jobs:</h2>
+        {% for job in jobs %}
+        <div class="job-item">
+            <div class="job-info">
+                <div class="job-photo">
+                    <img src="{{ job.photo_url }}" alt="Job Photo">
+                </div>
+                <div class="job-details">
+                    <h2>{{ job.title }}</h2>
+                    <p>{{ job.description }}</p>
+                    <p>Employer: {{ job.employer.username }}</p>
+                    <!-- Redirect to apply.html when the Apply button is clicked -->
+                    <a href="/apply?job_id={{ job.id }}" class="apply-button">Apply</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>

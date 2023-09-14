@@ -1,0 +1,40 @@
+<!-- create_job.html -->
+
+{% block content %}
+    {% if 'employer_id' not in session %}
+        <p>Please log in as an employer to access this functionality.</p>
+        <a href="/login_employer">Login as Employer</a>
+    {% else %}
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Create Job</title>
+            <link rel="stylesheet" type="text/css" href="static/style.css">
+        </head>
+        <body>
+            <h1>Create Job</h1>
+            <form method="POST" action="/create_job">
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div>
+                    <label for="photo">Photo (Upload or URL):</label>
+                    <input type="file" id="photo" name="photo">
+                    <span>or</span>
+                    <input type="text" id="photo_url" name="photo_url" placeholder="Enter photo URL">
+                </div>
+                <div>
+                    <input type="submit" value="Create Job">
+                </div>
+            </form>
+
+            <script src="static/script.js"></script>
+        </body>
+        </html>
+    {% endif %}
+{% endblock %}

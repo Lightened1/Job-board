@@ -1,0 +1,105 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.job-item {
+  background-color: #f2f2f2;
+  padding: 20px;
+  height: 200px;
+}
+
+.job-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.job-photo {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.job-photo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.job-details h2 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.job-details p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.job-details p.employer {
+  font-style: italic;
+}
+
+/* styles.css */
+
+.job-box {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 300px;      /* Specify the desired width */
+  height: 200px;     /* Specify the desired height */
+  /* Add more styling properties as desired */
+}
+
+.job-listings {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.apply-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.apply-button:hover {
+  background-color: #0056b3;
+}
